@@ -1,6 +1,11 @@
 import React from 'react';
-import { ChromePicker } from 'react-color';
+import { HuePicker } from 'react-color';
 
-export const ColorPicker: React.FC = () => (
-  <ChromePicker />
+import { ColorPickerProps } from './types';
+
+export const ColorPicker: React.FC<ColorPickerProps> = ({ color, handleChangeComplete }) => (
+  <HuePicker
+    color={color}
+    onChangeComplete={handleChangeComplete}
+  />
 );

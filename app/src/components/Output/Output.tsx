@@ -1,3 +1,25 @@
 import React from 'react';
 
-export const Output: React.FC = () => <h1>Output.tsx - it works</h1>
+import { useAppContext } from 'context/AppContext';
+
+import {
+  Content,
+  Rectangle,
+  Wrapper
+} from './styles';
+
+export const Output: React.FC = () => {
+  const { state: { backgroundColor, borderRadius, fontSize } } = useAppContext();
+
+  return (
+    <Wrapper>
+        <Rectangle
+          borderRadius={borderRadius}
+          fontSize={fontSize}
+          backgroundColor={backgroundColor}
+        >
+          <Content>Output</Content>          
+        </Rectangle>
+    </Wrapper>
+  );
+};
