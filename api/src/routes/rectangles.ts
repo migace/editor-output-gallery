@@ -4,17 +4,17 @@ import { RectangleModel } from 'models';
 
 export const router = Router();
 
-router.get('/', (req, res) => {
+router.get('/', (_req, res) => {
   RectangleModel.find({}, (err, rectangles) => {
     if (err) {
       return res.status(500).send(err);
     }
 
-    res.json(data);
+    return res.json(rectangles);
   });
 });
 
-router.post('/create', (req, res) => {
+router.post('/', (req, res) => {
   const rectangle = new RectangleModel({
     name: req.body.name,
     styles: req.body.styles,
@@ -25,6 +25,6 @@ router.post('/create', (req, res) => {
       return res.status(500).send(err);
     }
 
-    res.json(result);
+    return res.json(result);
   });
 });
