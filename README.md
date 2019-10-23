@@ -1,4 +1,4 @@
-## editor-output-gallery
+# editor-output-gallery
 
 Simple project which I realized as task during recruitment process. Then I added some features
 and created this repository, because this project shows how to use ContextAPI with hooks and
