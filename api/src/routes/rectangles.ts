@@ -14,6 +14,16 @@ router.get('/', (_req, res) => {
   });
 });
 
+router.get('/:id', (req, res) => {
+  RectangleModel.findById(req.params.id, (err, rectangles) => {
+    if (err) {
+      return res.status(500).send(err);
+    }
+
+    return res.json(rectangles);
+  });
+});
+
 router.post('/', (req, res) => {
   const rectangle = new RectangleModel({
     name: req.body.name,
