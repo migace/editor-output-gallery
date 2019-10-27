@@ -38,3 +38,13 @@ router.post('/', (req, res) => {
     return res.json(result);
   });
 });
+
+router.put('/:id', (req, res) => {
+  RactangleModel.findOneAndUpdate({ _id: req.param.id }, req.body, (err, rectangle) => {
+    if (err) {
+      return res.status(500).send(err);
+    }
+
+    return res.json(rectangle);
+  });
+});
