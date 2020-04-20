@@ -6,7 +6,7 @@ Typescript. I like it.
 
 ### Development process
 
-In the project directory (/app), you can run `yarn start`.
+In the project directory (/app), you can run `yarn && yarn start`.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### Production build
